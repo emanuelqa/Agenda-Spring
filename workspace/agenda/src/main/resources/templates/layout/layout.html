@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" 
+				xmlns:th="http://www.thymeleaf.org"
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+	<title>Agenda</title>
+
+	<link rel="stylesheet" type="text/css" th:href="@{/layout/vendors/stylesheets/bootstrap.min.css}"/>
+	<link rel="stylesheet" type="text/css" th:href="@{/layout/stylesheets/agenda.css}"/>
+	
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid bg-primary">
+				<a class="text-branco navbar-brand" href="#">Agenda</a>
+				<ul class="nav navbar-nav">
+					<li><a th:href="@{/agenda/listarContato}">Listar contatos</a></li>
+					<li><a href="#">Adicionar contato</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	
+	<section layout:fragment="conteudo"></section>
+	
+</div>
+</body>
+</html>

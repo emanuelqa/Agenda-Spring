@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" 
+				xmlns:th="http://www.thymeleaf.org"
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				layout:decorator="layout/layout">
+	
+<head>
+	<title>Contatos</title>
+</head>
+
+<body>
+<section layout:fragment="conteudo">
+	<h1>Contatos</h1>
+	<div class="table-responsive">
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Código</th>
+					<th>Nome</th>
+					<th>Telefone</th>
+					<th>Email</th>
+					<th>Anotação</th>
+				</tr>
+				<tbory>
+					<tr th:each="contato : ${contatos}">
+						<td th:text="${contato.codigo}"></td>
+						<td th:text="${contato.nome}"></td>
+						<td th:text="${contato.telefone}"></td>
+						<td th:text="${contato.email}"></td>
+						<td th:text="${contato.anotacao}"></td>
+					</tr>
+				</tbory>
+			</thead>
+		</table>
+	</div>	
+</section>
+</body>
+</html>
