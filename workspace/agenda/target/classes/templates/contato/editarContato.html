@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml" 
+				xmlns:th="http://www.thymeleaf.org"
+				xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+				layout:decorator="layout/layout">
+	
+<head>
+	<title>Editar Contato</title>
+</head>
+
+<body>
+<section layout:fragment="conteudo">
+
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">Editar Contato</div>
+				
+				<div class="panel-body">
+					<form th:action="@{agenda/editar}" method="PUT" th:object="${contato}" >
+						<div class="form-group">
+							<label for="nome">Nome: </label>
+							<input id="nome" class="form-control" placeholder="ex: João" type="text" th:field="*{nome}"/>
+						</div>
+						
+						<div class="form-group">
+							<label for="email">E-mail: </label>
+							<input id="email" class="form-control" placeholder="ex: joao@gmail.com" type="email" th:field="*{email}" /> 
+						</div>
+						
+						<div class="form-group">
+							<label for="telefone">Telefone: </label>
+							<input id="telefone" class="form-control" placeholder="ex: 999999999" type="text" th:field="*{telefone}" />
+						</div>
+						
+						<div class="form-group">
+							<label for="anotacao" >Anotação: </label>
+							<textarea id="anotacao" class="form-control" placeholder="Anotação" row="5" type="text" th:field="*{anotacao}"></textarea>
+						</div>
+						
+						<button class="btn btn-primary" type="submit">Salvar</button>
+					</form>
+				</div> <!-- Panel body -->
+			</div> <!-- Panel -->
+		</div> <!-- Col -->
+	</div> <!-- Row -->
+</section>
+</body>
+</html>
